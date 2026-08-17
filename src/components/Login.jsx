@@ -22,9 +22,14 @@ function Login() {
     navigate("/dashboard");
 
   } catch (err) {
-    console.log(err);
-    alert("Invalid username or password");
-  }
+    const register = window.confirm(
+        "Account not found.\n\nWould you like to register?"
+    );
+
+    if (register) {
+        navigate("/register");
+    }
+}
 };
 
   return (
